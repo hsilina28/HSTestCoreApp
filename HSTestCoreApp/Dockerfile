@@ -5,7 +5,6 @@ EXPOSE 44384
 
 FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /src
-COPY *.sln .
 COPY ["HSTestCoreApp/HSTestCoreApp.csproj", "./HSTestCoreApp/"]
 RUN dotnet restore "HSTestCoreApp/HSTestCoreApp.csproj"
 COPY . .
