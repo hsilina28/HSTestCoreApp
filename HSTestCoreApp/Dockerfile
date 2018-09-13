@@ -5,14 +5,14 @@ EXPOSE 44384
 
 FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /src
-COPY HSTestCoreApp/HSTestCoreApp.csproj HSTestCoreApp/
-RUN dotnet restore HSTestCoreApp/HSTestCoreApp.csproj
+COPY HSTestCoreApp/HSTestCoreApp/HSTestCoreApp.csproj HSTestCoreApp/HSTestCoreApp/
+RUN dotnet restore HSTestCoreApp/HSTestCoreApp/HSTestCoreApp.csproj
 COPY . .
-WORKDIR /src/HSTestCoreApp
-RUN dotnet build HSTestCoreApp.csproj -c Release -o /app
+WORKDIR /src/HSTestCoreApp/HSTestCoreApp
+RUN dotnet build HSTestCoreApp/HSTestCoreApp.csproj -c Release -o /app
 
 FROM build AS publish
-RUN dotnet publish HSTestCoreApp.csproj -c Release -o /app
+RUN dotnet publish HSTestCoreApp/HSTestCoreApp.csproj -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
