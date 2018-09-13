@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  hstestcoreapp:
+    image: ${DOCKER_REGISTRY}hstestcoreapp
+    build:
+      context: .
+      dockerfile: HSTestCoreApp/Dockerfile

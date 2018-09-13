@@ -4,17 +4,7 @@
 .gitignore
 .vs
 .vscode
-**/bin/
-**/obj/
-**/out/
-
-
-**/.toolstarget
-
-# files
-
-Dockerfile*
-
-**/*.trx
-
-**/*.md
+docker-compose.yml
+docker-compose.*.yml
+*/bin
+*/obj
