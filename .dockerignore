@@ -4,6 +4,17 @@
 .gitignore
 .vs
 .vscode
-*/bin
-*/obj
+**/bin/
+**/obj/
+**/out/
+
+
 **/.toolstarget
+
+# files
+
+Dockerfile*
+
+**/*.trx
+
+**/*.md
